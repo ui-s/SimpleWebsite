@@ -1,0 +1,87 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex; /* Enables Flexbox layout */
+    justify-content: center; /* Centers content horizontally */
+    align-items: center; /* Centers content vertically */
+    height: 100vh; /* Sets the height of the body to 100% of the viewport height */
+    background-color: #f0f0f0; /* Sets a background color */
+    font-family: Courier, monospace; /* Sets the font */
+    overflow: hidden; /* Prevents scrolling */
+    position: relative; /* Needed for absolutely positioned children */
+}
+
+div {
+    position: absolute; /* Makes all divs overlap in the same position */
+    text-align: center; /* Centers text inside each div */
+    top: 50%; /* Centers vertically */
+    left: 50%; /* Centers horizontally */
+    transform: translate(-50%, -50%); /* Corrects centering offsets */
+    width: 80%; /* Ensures the container doesn't stretch beyond 80% of the viewport width */
+    max-width: 800px; /* Sets a maximum width for larger screens */
+    text-align: center; /* Centers the text inside the container */
+    word-wrap: break-word; /* Ensures long words break onto the next line */
+    white-space: normal; /* Allows the text to wrap onto the next line naturally */
+}
+
+#hello {
+    font-size: 3rem;
+    color: #333;
+    opacity: 0;
+    animation: fadeInOut 3s ease-in-out forwards;
+}
+
+#welcome {
+    font-size: 3rem;
+    color: #333;
+    opacity: 0;
+    animation: fadeInOut 3s ease-in-out forwards;
+    animation-delay: 3s; /* Starts after the #hello animation */
+}
+
+#love {
+    font-size: 3rem;
+    color: #333;
+    opacity: 0;
+    animation: fadeInOut 3s ease-in-out forwards;
+    animation-delay: 6s; /* Starts after the #welcome animation */
+}
+
+#love2 {
+    font-size: 3rem;
+    color: #333;
+    opacity: 0;
+    animation: fadeInOut 3s ease-in-out forwards;
+    animation-delay: 9s; /* Starts after the #welcome animation */
+}
+
+#video-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px; /* Adds space above the video */
+    opacity: 0; /* Start hidden */
+    transition: opacity 2s ease-in-out; /* Smooth fade-in effect over 2 seconds */
+}
+
+#video-container iframe {
+    width: 100%; /* Take up the full width of the parent container */
+    max-width: 800px; /* Optional: set a maximum width for larger screens */
+    aspect-ratio: 16 / 9; /* Maintain the standard YouTube video aspect ratio */
+    height: auto; /* Automatically adjust height based on the aspect ratio */
+}
+
+@keyframes fadeInOut {
+    0% {
+        opacity: 0;
+    }
+    25% {
+        opacity: 1;
+    }
+    75% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
